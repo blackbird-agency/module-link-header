@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <event name="controller_front_send_response_before">
+        <observer name="add_link_headers_to_response" instance="Blackbird\LinkHeader\Observer\AddLinkHeaderToResponse"/>
+    </event>
+    <!-- Keep the links declared by templates when their block is served from the block HTML cache -->
+    <event name="view_block_abstract_to_html_before">
+        <observer name="link_header_block_cache_start" instance="Blackbird\LinkHeader\Observer\BlockCacheLinksStart"/>
+    </event>
+    <event name="view_block_abstract_to_html_after">
+        <observer name="link_header_block_cache_end" instance="Blackbird\LinkHeader\Observer\BlockCacheLinksEnd"/>
+    </event>
+</config>

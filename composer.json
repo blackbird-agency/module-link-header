@@ -1,0 +1,27 @@
+{
+    "name": "blackbird/module-link-header",
+    "version": "1.0.0",
+    "authors": [
+        {
+            "name": "Blackbird Agency",
+            "email": "contact@bird.eu",
+            "homepage": "https://black.bird.eu/"
+        }
+    ],
+    "description": "Send preload, preconnect... links declared by templates as an HTTP Link response header, kept through the full page cache and the block HTML cache",
+    "keywords": ["magento2", "magento2-module", "link header", "preload", "lcp", "core web vitals", "performance"],
+    "type": "magento2-module",
+    "require": {
+        "php": ">=8.1",
+        "magento/framework": "*"
+    },
+    "license": "MIT",
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Blackbird\\LinkHeader\\": ""
+        }
+    }
+}
